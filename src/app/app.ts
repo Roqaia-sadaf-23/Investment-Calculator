@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { Header } from './header/header';
+import { UserInput } from './user-input/user-input';
 
 @Component({
-  imports: [Header],
+  imports: [Header, UserInput],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('investment-calculator');
+  // protected readonly title = signal('investment-calculator');
 }
