@@ -1,0 +1,27 @@
+@if (!resultsData) {
+  <p class="">please enter some values and press the calculate button</p>
+} @else {
+  <table>
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>Investment Value</th>
+        <th>Interest (year)</th>
+        <th>Total Interest</th>
+        <th>Invested Capital</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (result of resultsData; track result.year) {
+        <tr>
+          <td>{{ result.year }}</td>
+          <td>{{ result.valueEndOfYear | currency }}</td>
+          <td>{{ result.interest | currency }}</td>
+          <td>{{ result.totalInterest | currency }}</td>
+          <td>{{ result.totalAmountInvested | currency }}</td>
+        </tr>
+      }
+      <!-- Rows will be populated by the component -->
+    </tbody>
+  </table>
+}
