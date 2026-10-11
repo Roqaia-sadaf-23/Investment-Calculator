@@ -37,8 +37,8 @@ export class App {
         totalAmountInvested: initialInvestment + annualInvestment * year,
       });
     }
-
-    return annualData;
+    console.log(annualData);
+    // return annualData;
   }
   // protected readonly title = signal('investment-calculator');
 }
