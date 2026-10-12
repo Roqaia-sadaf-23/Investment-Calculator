@@ -10,14 +10,17 @@ import { InvestmentResults } from './investment-results/investment-results';
   templateUrl: './app.html',
 })
 export class App {
-  resultsData?: {
-    year: number;
-    interest: number;
-    valueEndOfYear: number;
-    annualInvestment: number;
-    totalInterest: number;
-    totalAmountInvested: number;
-  }[];
+  resultsData = signal<
+    | {
+        year: number;
+        interest: number;
+        valueEndOfYear: number;
+        annualInvestment: number;
+        totalInterest: number;
+        totalAmountInvested: number;
+      }[]
+    | undefined
+  >(undefined);
 
   calculateInvestmentResults(data: {
     initialInvestment: number;
@@ -47,7 +50,7 @@ export class App {
         totalAmountInvested: initialInvestment + annualInvestment * year,
       });
     }
-    this.resultsData = annualData;
+    this.resultsData.set(annualData);
     // return annualData;
   }
   // protected readonly title = signal('investment-calculator');
