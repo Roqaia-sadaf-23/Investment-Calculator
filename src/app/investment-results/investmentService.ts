@@ -36,6 +36,6 @@ export class InvestmentService {
       });
     }
     this.resultsData = annualData;
-    // return annualData;
+    return this.resultsData;
   }
 }

@@ -10,17 +10,5 @@ import { InvestmentResults } from './investment-results/investment-results';
   templateUrl: './app.html',
 })
 export class App {
-  resultsData = signal<
-    | {
-        year: number;
-        interest: number;
-        valueEndOfYear: number;
-        annualInvestment: number;
-        totalInterest: number;
-        totalAmountInvested: number;
-      }[]
-    | undefined
-  >(undefined);
-
   // protected readonly title = signal('investment-calculator');
 }
