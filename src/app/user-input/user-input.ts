@@ -13,6 +13,7 @@ export class UserInput {
   constructor(private invesment: InvestmentService) {}
 
   onSubmit() {
+    console.log('Calculate button clicked!');
     this.invesment.calculateInvestmentResults({
       initialInvestment: +this.initialInvestment(),
       annualInvestment: +this.annualInvestment(),
